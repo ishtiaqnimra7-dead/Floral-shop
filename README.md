@@ -6,5 +6,8 @@ It also provides customized floral themes and decoration services for event plan
 
 The website includes interactive features such as product browsing, flower selection, purchasing options, customer feedback submission, and easy navigation to ensure a smooth shopping experience. Users can explore different categories, view floral designs, and select the best arrangements for their occasions.
 
+Additionally, the project includes an admin login page and a dashboard for monitoring and managing products, customer orders, feedback, and overall website activities. This allows administrators to efficiently handle store operations and maintain smooth business management.
+
 Built using HTML, CSS, JavaScript, PHP, and backend technologies, Secret Bache combines visual elegance with functional performance, making it a complete floral store web project designed for both beauty and convenience.
+
 🔗 [Click Here to Visit Secret Bache Floral Store](https://floral-shop.free.nf/)
