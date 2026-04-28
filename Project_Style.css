@@ -21,7 +21,7 @@ body {
     justify-content: center;
     position: relative; /* or fixed if you want it to stay while scrolling */
     z-index: 10;
-    box-shadow: 5px 5px 15px  rgb(116, 62, 101);
+    box-shadow: 5px 5px 15px  rgb(218, 146, 198);
 }
 .container_1_headerbox{
     height:90px;
