@@ -1,123 +1,140 @@
-html{
+/* =========================
+   BASE RESET & GLOBALS
+   ========================= */
+
+html {
   scroll-behavior: smooth;
-} 
-body {
-  font-family: 'Poppins', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff9fa;
+  color: #444;
+}
 
-.container_1_header{
-    height:14vh;
-    width:100%;
-    background-color:rgb(218, 146, 198);
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative; /* or fixed if you want it to stay while scrolling */
-    z-index: 10;
-    box-shadow: 5px 5px 15px  rgb(218, 146, 198);
-}
-.container_1_headerbox{
-    height:90px;
-    width:90%;
-    margin-top: 4px;
-    background-color: rgb(218, 146, 198);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.container_1_headleft{
-    height:99px;
-    width:22%;
-    display: flex;
-    flex-direction: row;
-    
-}
-.container_1_logo{
-    height:90px;
-    width:100px;
-    background-image: url(./Images_ProjectG/Capture.PNG);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top:5px;
-    margin-left: 4px;
-    
-}
-.container_1_name{
-    height:50px;
-    width:200px;
-    color:white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 23px;
-    text-align: center;
-    margin-top:28px;
-    
+/* =========================
+   HEADER
+   ========================= */
 
+.container_1_header {
+  height: auto;
+  min-height: 70px;
+  width: 100%;
+  background-color: rgb(218, 146, 198);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 12px rgba(116, 62, 101, 0.3);
+  padding: 8px 0;
 }
-.container_1_headmid{
-    height:98px;
-    width:900px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 
+.container_1_headerbox {
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
-.container_1_anchors{
-    height:90px;
-    width:660px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
 
-
+.container_1_headleft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
+
+.container_1_logo {
+  height: 55px;
+  width: 60px;
+  background-image: url(./Images_ProjectG/Capture.PNG);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.container_1_name {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.container_1_headmid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.container_1_anchors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
 .container_1_anchors a,
-.container1_cart a{
-    height:45px;
-    width:80px;
-    text-align: center;
-    font-size: 17px;
-    color:white;
-    margin-top:34px ;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    
+.container1_cart a {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
 }
-.container_1_anchors a:hover{
-    color:rgb(116, 62, 101);
-    text-shadow: rgb(116, 62, 101);
-    
+
+.container_1_anchors a:hover {
+  color: rgb(116, 62, 101);
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.container_1_headright{
-    height:45px;
-    width:200px;
-    background-color: rgb(218, 146, 198);
-    margin-top:35px;
-    
+
+.container_1_headright {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
+
+/* =========================
+   HERO / VIDEO SECTION
+   ========================= */
 
 .container_2 {
   position: relative;
   width: 100%;
-  height: 98vh;   
+  height: 80vh;
   overflow: hidden;
 }
 
 .background_video {
   position: absolute;
-  top: 7px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 95%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1; 
+  z-index: -1;
 }
 
 .rotated_video {
@@ -128,8 +145,10 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
-  top: 26%;
+  top: 50%;
+  transform: translateY(-50%);
   color: white;
+  padding: 0 20px;
 }
 
 .hero_title {
@@ -142,162 +161,182 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   margin-top: 0.5rem;
-}
-.container_3{
-    width:100%;
-    height:600px;
-    background-color: rgb(255, 247, 253);
-    margin-top: -25px;
-    
-}
-.container_3 h2{
-    font-size: 4.2rem;
-    position: relative;
-    text-align: center;
-    top:70px;
-    color:rgb(218, 146, 198)
-}
-.about_box{
-    width:80%;
-    height:340px;
-    background-color: rgb(218, 146, 198);
-    border-top-right-radius: 190px;
-    border-bottom-left-radius:190px ;
-    border-bottom-right-radius: 190px;
-    border-top-left-radius:190px ;
-    position: relative;
-    top:100px;
-    left:150px;
-    box-shadow: 3px 3px 10px  rgb(116, 62, 101);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about_box p{
-    height:200px;
-    width:80%;
-    font-size: 1.3rem;
-    position:relative;
-    top:50px;
-    left: 100px;
-    text-align: center;
-    letter-spacing: 0.5px;
-    word-spacing: 2px;
-    color: white;
+/* =========================
+   ABOUT SECTION
+   ========================= */
+
+.container_3 {
+  width: 100%;
+  background-color: rgb(255, 247, 253);
+  padding: 60px 20px 80px;
 }
-.about_box h5{
-    height:30px;
-    width:30px;
-    font-size: 30px;
-    position:relative;
-    top:60px;
-    left:580px;
+
+.container_3 h2 {
+  font-size: 4.2rem;
+  text-align: center;
+  color: rgb(218, 146, 198);
+  margin-bottom: 50px;
 }
+
+.about_box {
+  width: 90%;
+  max-width: 900px;
+  background-color: rgb(218, 146, 198);
+  border-radius: 120px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  box-shadow: 3px 3px 10px rgb(116, 62, 101);
+  text-align: center;
+}
+
+.about_box p {
+  font-size: 1.15rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+  color: white;
+  line-height: 1.8;
+}
+
+.about_box h5 {
+  font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* =========================
+   SERVICES / FLOWERS SECTION
+   ========================= */
+
 .container_services {
   width: 100%;
-  height: 550px;
   background-color: rgb(218, 146, 198);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  padding: 60px 30px;
 }
+
 .service_item {
   position: relative;
   z-index: 5;
   cursor: pointer;
 }
 
+.container_services_header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .container_services_header h1 {
   font-size: 2.7rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: white;
 }
 
-.container_services_body {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-
+.container_services_header p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
-.service_item h2{
-    font-size: 24px;
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
-    text-align: center;
-    margin-top: 10px;
+
+/* Desktop: all 4 in one row */
+.container_services_body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+}
+
+.service_item h2 {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .service_box {
   background-color: white;
-  width: 270px;
-  height: 230px;
+  width: 100%;
+  height: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  
   box-shadow: 0 4px 10px rgb(252, 234, 247);
-  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.roses{
-    background-image: url("./Images_ProjectG/roses.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
 
-}
-#rosespage {
-  cursor: pointer;
-}
-.tulips{
-    background-image: url("./Images_ProjectG/tulips.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
-
-}
-.lilies{
-    background-image: url("./Images_ProjectG/lilies.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
-
-}
-.mixed{
-    background-image: url("./Images_ProjectG/mixed_bouquets.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
-
-}
 .service_box:hover {
   box-shadow: 3px 10px 20px rgb(116, 62, 101);
-   transform: translateY(-5px);
-
+  transform: translateY(-5px);
 }
 
 .service_box h2 {
   color: rgb(116, 62, 101);
-  font-size:40px;
+  font-size: 40px;
   text-align: center;
 }
-.service_box h2:hover{
-    font-size: 42px;
+
+.service_box h2:hover {
+  font-size: 42px;
 }
+
+.roses {
+  background-image: url("./Images_ProjectG/roses.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#rosespage {
+  cursor: pointer;
+}
+
+.tulips {
+  background-image: url("./Images_ProjectG/tulips.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lilies {
+  background-image: url("./Images_ProjectG/lilies.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mixed {
+  background-image: url("./Images_ProjectG/mixed_bouquets.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* =========================
+   EVENTS SECTION
+   ========================= */
 
 .container_6 {
   width: 100%;
-  height:550px;
   background-color: rgb(252, 234, 247);
 }
 
 .container_events {
   width: 100%;
-  height: 550px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px;
+  padding: 60px 20px;
 }
 
 .container_events_header {
@@ -314,14 +353,18 @@ body {
 .container_events_header p {
   font-size: 1.1rem;
   color: rgb(74, 33, 62);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+/* Desktop: all 4 in one row */
 .container_events_body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   width: 100%;
+  max-width: 1200px;
+  justify-items: center;
 }
 
 .event_box {
@@ -330,11 +373,12 @@ body {
   align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .event_img {
-  width: 270px;
-  height: 230px;
+  width: 100%;
+  height: 210px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
@@ -342,14 +386,16 @@ body {
 }
 
 .event_box h2 {
-  margin-top: 15px;
-  font-size: 1.6rem;
+  margin-top: 12px;
+  font-size: 1.3rem;
   color: rgb(116, 62, 101);
+  text-align: center;
 }
 
 .event_box:hover {
   transform: translateY(-5px);
 }
+
 .wedding {
   background-image: url("./Images_ProjectG/weddingt.jpg");
 }
@@ -365,13 +411,17 @@ body {
 .anniversary {
   background-image: url("./Images_ProjectG/anniversary.jpg");
 }
+
+/* =========================
+   FEEDBACK SECTION
+   ========================= */
+
 .container_feedback {
   width: 100%;
-  height:560px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  padding: 60px 20px;
 }
 
 .container_feedback_header h1 {
@@ -390,14 +440,14 @@ body {
   box-shadow: 0 4px 15px rgb(116, 62, 101);
   padding: 30px;
 }
+
 .feedback_message {
-  margin-left: 20px;
   padding: 15px;
   border-radius: 10px;
   font-size: 16px;
-  width: 350px;
-  display: inline-block;
-  margin-top:5px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
 }
 
 .feedback_message.success {
@@ -411,7 +461,6 @@ body {
   color: #552121;
   border: 1px solid #612e2e;
 }
-
 
 .form_group {
   display: flex;
@@ -432,11 +481,12 @@ body {
   border-radius: 6px;
   font-size: 1rem;
   outline: none;
+  width: 100%;
 }
 
 .form_group input:focus,
 .form_group textarea:focus {
-  border-color:darkgrey;
+  border-color: darkgrey;
 }
 
 .feedback_btn {
@@ -455,13 +505,17 @@ body {
   transform: translateY(-3px);
 }
 
+/* =========================
+   CONTACT SECTION
+   ========================= */
+
 .container_contact {
   width: 100%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px;
+  padding: 60px 20px;
   background-color: rgb(218, 146, 198);
 }
 
@@ -484,7 +538,7 @@ body {
 .container_contact_body {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   justify-content: center;
   max-width: 1100px;
   width: 100%;
@@ -497,6 +551,9 @@ body {
   box-shadow: 0 4px 15px rgb(116, 62, 101);
   transition: transform 0.3s ease;
   text-align: center;
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 280px;
 }
 
 .contact_block h2 {
@@ -513,8 +570,12 @@ body {
   transform: translateY(-5px);
 }
 
+/* =========================
+   FLOWER DETAIL PAGES
+   ========================= */
+
 .flower_detail {
-  padding: 100px 50px;
+  padding: 60px 30px;
   text-align: center;
 }
 
@@ -526,17 +587,14 @@ body {
   margin-bottom: 40px;
 }
 
-
-.container_roses, 
+.container_roses,
 .container_tulips,
 .container_lilies,
 .container_bouquets {
   width: 100%;
   min-height: 100vh;
   background-color: rgb(252, 234, 247);
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 80px 60px;
+  padding: 80px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -575,7 +633,7 @@ body {
 .lilies_gallery,
 .bouquets_gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   width: 100%;
   max-width: 1200px;
@@ -591,7 +649,8 @@ body {
   box-shadow: 0 4px 15px rgba(116, 62, 101, 0.25);
   padding: 20px;
   text-align: center;
-  width: 270px;
+  width: 100%;
+  max-width: 280px;
   transition: all 0.3s ease;
 }
 
@@ -608,7 +667,7 @@ body {
 .lily_img,
 .bouquet_img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
@@ -650,18 +709,18 @@ body {
   font-size: 15px;
   font-weight: 500;
   transition: all 0.3s ease;
-  margin-bottom: 2px;
+  margin-top: 8px;
 }
 
 .add_cart_btn:hover {
-  background-color: rgb(218, 146, 198);
+  background-color: rgb(190, 110, 170);
   transform: scale(1.05);
 }
+
 .back_btn {
   margin-top: 60px;
   text-align: center;
 }
-
 
 .back_btn a {
   text-decoration: none;
@@ -670,12 +729,18 @@ body {
   padding: 12px 25px;
   border-radius: 8px;
   font-size: 1rem;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .back_btn a:hover {
   background-color: rgb(95, 47, 84);
+  transform: translateY(-3px);
 }
+
+/* =========================
+   EVENT DETAIL PAGES
+   ========================= */
 
 .container_wedding,
 .container_birthday,
@@ -683,16 +748,12 @@ body {
 .container_anniversary {
   width: 100%;
   min-height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 80px 60px;
-  display: flex;
   background-color: rgb(252, 234, 247);
+  padding: 80px 40px;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .wedding_header,
 .birthday_header,
@@ -708,21 +769,6 @@ body {
 .anniversary_header h1 {
   font-size: 2.8rem;
   font-family: "Poppins", sans-serif;
-}
-
-.wedding_header h1 {
-  color: rgb(116, 62, 101)
-}
-
-.birthday_header h1 {
-  color: rgb(116, 62, 101);
-}
-
-.corporate_header h1 {
-  color: rgb(116, 62, 101);
-}
-
-.anniversary_header h1 {
   color: rgb(116, 62, 101);
 }
 
@@ -737,19 +783,17 @@ body {
   color: #444;
 }
 
-
 .wedding_gallery,
 .birthday_gallery,
 .corporate_gallery,
 .anniversary_gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   width: 100%;
   max-width: 1200px;
   justify-items: center;
 }
-
 
 .wedding_card,
 .birthday_card,
@@ -758,7 +802,8 @@ body {
   background-color: white;
   border-radius: 15px;
   padding: 20px;
-  width: 270px;
+  width: 100%;
+  max-width: 280px;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -772,19 +817,17 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-
 .wedding_img,
 .birthday_img,
 .corporate_img,
 .anniversary_img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
   margin-bottom: 15px;
 }
-
 
 .wedding_card h2,
 .birthday_card h2,
@@ -792,22 +835,6 @@ body {
 .anniversary_card h2 {
   font-size: 1.4rem;
   margin-bottom: 8px;
-}
-
-
-.wedding_card h2 {
-  color: rgb(116, 62, 101);
-}
-
-.birthday_card h2 {
-  color: rgb(116, 62, 101);
-}
-
-.corporate_card h2 {
-  color: rgb(116, 62, 101);
-}
-
-.anniversary_card h2 {
   color: rgb(116, 62, 101);
 }
 
@@ -821,81 +848,21 @@ body {
   line-height: 1.5;
 }
 
-.wedding_card .price {
-  color: rgb(116, 62, 101);
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.birthday_card .price {
-  color:  rgb(116, 62, 101);
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.corporate_card .price {
-  color: rgb(116, 62, 101);
-  font-weight: bold;
-  margin-top: 10px;
-}
-
+.wedding_card .price,
+.birthday_card .price,
+.corporate_card .price,
 .anniversary_card .price {
   color: rgb(116, 62, 101);
   font-weight: bold;
   margin-top: 10px;
 }
 
-.back_btn {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.back_btn a {
-  text-decoration: none;
-  color: white;
-  background-color: #5e3755;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.back_btn a:hover {
-  background-color: #3f2437;
-  transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-  .container_wedding,
-  .container_birthday,
-  .container_corporate,
-  .container_anniversary {
-    padding: 60px 20px;
-  }
-
-  .wedding_header h1,
-  .birthday_header h1,
-  .corporate_header h1,
-  .anniversary_header h1 {
-    font-size: 2.1rem;
-  }
-
-  .wedding_header p,
-  .birthday_header p,
-  .corporate_header p,
-  .anniversary_header p {
-    font-size: 1rem;
-  }
-}
-
-body {
-  background-color: #fff9fa;
-  font-family: 'Poppins', sans-serif;
-  color: #444;
-}
+/* =========================
+   CART & ORDER
+   ========================= */
 
 .cart_container {
-  width: 80%;
+  width: 90%;
   max-width: 700px;
   margin: 40px auto;
   text-align: center;
@@ -906,7 +873,7 @@ body {
 }
 
 .cart_container h1 {
-  color: rgb;
+  color: rgb(116, 62, 101);
   margin-bottom: 20px;
   font-size: 26px;
 }
@@ -949,13 +916,14 @@ body {
 
 .cart_buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 10px;
   margin-top: 10px;
 }
 
 .order_container {
-  width: 80%;
+  width: 90%;
   max-width: 700px;
   margin: 40px auto;
   background: #ffffff;
@@ -1018,6 +986,10 @@ body {
   font-size: 15px;
 }
 
+/* =========================
+   BUTTONS
+   ========================= */
+
 .btn {
   text-decoration: none;
   padding: 8px 16px;
@@ -1026,6 +998,7 @@ body {
   transition: 0.2s ease;
   display: inline-block;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .btn.light {
@@ -1051,6 +1024,10 @@ body {
   background: #ff2e6d;
 }
 
+/* =========================
+   MESSAGES
+   ========================= */
+
 .success_msg {
   margin-top: 25px;
   background: #ffeef3;
@@ -1062,6 +1039,7 @@ body {
 .error_msg {
   color: red;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 .empty_text {
@@ -1069,10 +1047,10 @@ body {
   color: #777;
 }
 
+/* =========================
+   ADMIN LOGIN
+   ========================= */
 
-
-
-/* === Admin Login === */
 .admin_login_container {
   max-width: 380px;
   margin: 80px auto;
@@ -1104,35 +1082,15 @@ body {
   box-shadow: 0 0 5px rgba(214, 51, 132, 0.3);
 }
 
-.btn {
-  background-color: #d63384;
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
-}
+/* =========================
+   ADMIN DASHBOARD
+   ========================= */
 
-.btn:hover {
-  background-color: #b52d71;
-  transform: translateY(-2px);
-}
-
-.error_msg {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-
-/* === Admin Dashboard === */
 .admin_dashboard {
   position: relative;
   max-width: 1000px;
   margin: 60px auto;
-  padding: 35px;
+  padding: 35px 20px;
   background-color: #fff0f6;
   border-radius: 14px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
@@ -1151,6 +1109,8 @@ body {
   border-collapse: collapse;
   margin-top: 20px;
   font-size: 15px;
+  display: block;
+  overflow-x: auto;
 }
 
 .orders_table th,
@@ -1158,6 +1118,7 @@ body {
   border: 1px solid #f1c3d0;
   padding: 12px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .orders_table th {
@@ -1170,7 +1131,10 @@ body {
   background-color: #fff6f9;
 }
 
-/* === Logout Button === */
+/* =========================
+   LOGOUT BUTTON
+   ========================= */
+
 .logout_btn {
   position: absolute;
   top: 20px;
@@ -1192,3 +1156,317 @@ body {
   transform: translateY(-2px);
 }
 
+/* =========================================
+   RESPONSIVE — LARGE TABLETS (≤1024px)
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+  /* Hero */
+  .container_2 {
+    height: 65vh;
+  }
+
+  .hero_title {
+    font-size: 4rem;
+  }
+
+  /* About */
+  .container_3 h2 {
+    font-size: 3rem;
+  }
+
+  .about_box {
+    padding: 40px;
+    border-radius: 80px;
+  }
+
+  /* Flowers: 2x2 grid */
+  .container_services_body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 560px;
+  }
+
+  .service_box {
+    height: 190px;
+  }
+
+  .container_services_header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Events: 2x2 grid */
+  .container_events_body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 560px;
+  }
+
+  .event_img {
+    height: 190px;
+  }
+
+  .container_events_header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Nav */
+  .container_1_anchors a {
+    font-size: 13px;
+    padding: 5px 7px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE (≤768px)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Header — stack logo + nav vertically */
+  .container_1_headerbox {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+  }
+
+  .container_1_headleft {
+    justify-content: center;
+  }
+
+  .container_1_headmid {
+    width: 100%;
+  }
+
+  .container_1_anchors {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .container_1_anchors a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  /* Hero */
+  .container_2 {
+    height: 55vh;
+  }
+
+  .hero_title {
+    font-size: 2.8rem;
+  }
+
+  .hero_subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* About */
+  .container_3 h2 {
+    font-size: 2.2rem;
+  }
+
+  .about_box {
+    border-radius: 40px;
+    padding: 30px 22px;
+    width: 95%;
+  }
+
+  .about_box p {
+    font-size: 1rem;
+  }
+
+  /* Flowers: 2 columns */
+  .container_services_body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 460px;
+  }
+
+  .service_box {
+    height: 160px;
+  }
+
+  .service_item h2 {
+    font-size: 15px;
+  }
+
+  .container_services_header h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Events: 2 columns */
+  .container_events_body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 460px;
+  }
+
+  .event_img {
+    height: 160px;
+  }
+
+  .event_box h2 {
+    font-size: 1.1rem;
+  }
+
+  .container_events_header h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Feedback */
+  .container_feedback_body {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .container_feedback_header h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Contact */
+  .container_contact_body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_block {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  /* Detail pages */
+  .container_wedding,
+  .container_birthday,
+  .container_corporate,
+  .container_anniversary,
+  .container_roses,
+  .container_tulips,
+  .container_lilies,
+  .container_bouquets {
+    padding: 50px 16px;
+  }
+
+  .wedding_header h1,
+  .birthday_header h1,
+  .corporate_header h1,
+  .anniversary_header h1,
+  .roses_header h1,
+  .tulips_header h1,
+  .lilies_header h1,
+  .bouquets_header h1 {
+    font-size: 2rem;
+  }
+
+  /* Admin */
+  .admin_dashboard {
+    padding: 25px 15px;
+    margin: 30px 15px;
+  }
+
+  .logout_btn {
+    position: static;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — SMALL MOBILE (≤480px)
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  /* Hero */
+  .container_2 {
+    height: 50vh;
+  }
+
+  .hero_title {
+    font-size: 2rem;
+  }
+
+  .hero_subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Header */
+  .container_1_name {
+    font-size: 15px;
+  }
+
+  .container_1_logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .container_1_anchors a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* About */
+  .container_3 h2 {
+    font-size: 1.7rem;
+  }
+
+  .about_box {
+    border-radius: 30px;
+    padding: 22px 16px;
+  }
+
+  .about_box p {
+    font-size: 0.9rem;
+  }
+
+  /* Flowers: single column */
+  .container_services_body {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .service_box {
+    height: 170px;
+  }
+
+  /* Events: single column */
+  .container_events_body {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .event_img {
+    height: 170px;
+  }
+
+  /* Cart / Order */
+  .cart_container,
+  .order_container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .orders_table th,
+  .orders_table td,
+  .cart_table th,
+  .cart_table td,
+  .order_table th,
+  .order_table td {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* Admin */
+  .admin_login_container {
+    margin: 40px 15px;
+    width: auto;
+  }
+}
