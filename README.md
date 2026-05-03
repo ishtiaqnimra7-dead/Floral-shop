@@ -9,6 +9,5 @@ The website includes interactive features such as product browsing, flower selec
 Additionally, the project includes an admin login page and a dashboard for monitoring and managing products, customer orders, feedback, and overall website activities. This allows administrators to efficiently handle store operations and maintain smooth business management.
 
 Built using HTML, CSS, JavaScript, PHP, and backend technologies, Secret Bache combines visual elegance with functional performance, making it a complete floral store web project designed for both beauty and convenience.
-
-
+[Visit The Floral Website]([https://yoursite.byethost.com](https://floral-shop.loveslife.biz/))
 
